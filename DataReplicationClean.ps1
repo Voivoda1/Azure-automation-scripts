@@ -1,7 +1,4 @@
-<# Author: Marin Govedarski 
-
-Reference: Qa OPS shared folder
-\\tor.pyrsoftware.com\shares\Group\QA\QA_Operations
+<# Author: Voivoda1
 
 Note: The aim of this script is to automate a series of manual tasks,
 which include cleaning server side errors, log information retrieval and resolving replication issues.
@@ -9,9 +6,9 @@ which include cleaning server side errors, log information retrieval and resolvi
 #>
 
 $cred = Get-Credential
-$list = @("10.30.20.27","10.30.20.35","10.30.20.71", "10.30.20.8");
+$list = @("10.30.20.27","10.30.20.35","10.30.20.71", "10.30.20.8"); #A list of VM's
 
-$s = New-PSSession -ComputerName $list -Credential $cred;
+$s = New-PSSession -ComputerName $list -Credential $cred; 
 
 Invoke-Command -Session $s -ScriptBlock {
 
@@ -22,10 +19,10 @@ Invoke-Command -Session $s -ScriptBlock {
     $hosts = @($files, $files1, $files2);
 
     foreach($item in $hosts) {
-        $item; # Call the variable in order to avoid double-hop issue with PS remoting;
+        $item; # Call the variable in order to avoid double-hop issue with PS remoting if applicable;
 
       foreach($file in $files, $files1, $files2) {
-          $file; # Call the variable in order to avoid double-hop issue with PS remoting;
+          $file; # Call the variable in order to avoid double-hop issue with PS remoting if applicable;
 
       Get-Content $file | Select-String -Pattern "error";
       Clear-Content $file -Force;
