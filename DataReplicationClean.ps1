@@ -2,6 +2,7 @@
 
 Note: The aim of this script is to automate a series of manual tasks,
 which include cleaning server side errors, log information retrieval and resolving replication issues.
+Relevant to windows environments, windows servers in general and most applicable for System Administrators
 
 #>
 
