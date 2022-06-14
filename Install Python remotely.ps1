@@ -1,4 +1,4 @@
-# Install Python remotely on different hosts if needed.
+# Install Python remotely on different hosts if needed, via PowerShell
 
 $url = "https://www.python.org/ftp/python/3.7.6/python-3.7.6-amd64.exe"
 $output = "C:/tmp/python-3.7.6-amd64.exe"
