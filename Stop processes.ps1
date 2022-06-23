@@ -2,7 +2,7 @@
 To be used only when certain processes have not been stopped autoamtically #>
 $cred = Get-Credential
 
-$list = @("10.30.33.8","10.30.33.27","10.30.33.32")
+$list = @("10.30.33.8","10.30.33.27","10.30.33.32") #An array of servers
 
 $s = New-PSSession -ComputerName $list -Credential $cred
 
